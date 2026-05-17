@@ -1,0 +1,12 @@
+-- database: ./ecommerce.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+-- Level 1.1
+    SELECT 
+        customers.first_name,
+        customers.last_name,
+        count(orders.order_id) as Number_Of_Orders
+    FROM customers
+    LEFT JOIN orders on customers.customer_id = orders.customer_id
+    GROUP BY customers.first_name, customers.last_name
+
